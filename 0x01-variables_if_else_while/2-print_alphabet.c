@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-OAOAOA/**
+/**
  * main - prints the alphabet in lowercase
  * Return: 0 always (succeful)
  */
