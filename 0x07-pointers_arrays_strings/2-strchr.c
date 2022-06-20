@@ -1,34 +1,29 @@
 #include "main.h"
+#include <stdio.h>
+
 /**
- * *_strspn - gets the length of a prefix substring.
- * @s: string to evaluate
- * @accept: string containing the list of characters to match in s
+ * _strchr - locates a character
+ * @s: input string
+ * @c: input character
  *
- * Return: the number of bytes in the initial segment
- * of s which consist only of bytes from accept
+ * Description: locates a character in a string
+ * Return: returns a ptr to the 1st occurrence of
+ * the char c in str s, else, return NULL
  */
-unsigned int _strspn(char *s, char *accept)
+
+char *_strchr(char *s, char c)
 {
-	int i, j, f, flag;
-
-	f = 0;
-
-	for (i = 0; s[i] != '\0'; i++)
+	while (*s)
 	{
-		flag = 0;
-		for (j = 0; accept[j] != '\0'; j++)
+		if (c == *s)
 		{
-			if (s[i] == accept[j])
-			{
-				f++;
-				flag = 1;
-			}
+			return (s);
 		}
-		if (flag == 0)
-		{
-			return (f);
-		}
+		s++;
 	}
-
-	return (0);
+	if (!c)
+	{
+		return (s);
+	}
+	return (NULL);
 }
